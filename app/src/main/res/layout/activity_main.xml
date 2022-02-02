@@ -19,6 +19,16 @@
         android:textSize="24sp"
         android:textStyle="bold|italic" />
 
+    <EditText
+        android:id="@+id/edit_fullname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Enter your name"
+        android:inputType="textPersonName"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
     <Button
         android:id="@+id/btn_to_second_activity"
         android:layout_width="match_parent"

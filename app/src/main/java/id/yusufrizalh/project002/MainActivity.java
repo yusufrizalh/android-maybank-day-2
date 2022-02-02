@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -15,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     Toast myToast = null;  // diberi nilai awal
     // langkah 1: membuat global variable
     private Button btn_to_second_activity, btn_implicit_intent;
+    private EditText edit_fullname;
 
     // Lifecycle Activity
     @Override
@@ -29,14 +31,18 @@ public class MainActivity extends AppCompatActivity {
         // langkah 2: mengenalkan variable dengan id pada layout
         btn_to_second_activity = findViewById(R.id.btn_to_second_activity);
         btn_implicit_intent = findViewById(R.id.btn_implicit_intent);
+        edit_fullname = findViewById(R.id.edit_fullname);
 
         // langkah 3: event handling btn_to_second_activity
         btn_to_second_activity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // data yang akan dikirim
+                String fullname = edit_fullname.getText().toString();
                 // perintah untuk berpindah Activity
                 // explicit intent
                 Intent myIntent = new Intent(MainActivity.this, SecondActivity.class);
+                myIntent.putExtra("fullname", fullname);
                 startActivity(myIntent);
             }
         });

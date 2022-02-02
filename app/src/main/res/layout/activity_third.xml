@@ -5,29 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="6dp"
-    tools:context=".MainActivity">
+    tools:context=".ThirdActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Android Lifecycle Activity"
+        android:text="Third Activity"
         android:textAlignment="center"
         android:textAllCaps="true"
-        android:textColor="#673AB7"
+        android:textColor="#E91E63"
         android:textSize="24sp"
-        android:textStyle="bold|italic" />
+        android:textStyle="bold" />
 
     <Button
-        android:id="@+id/btn_to_second_activity"
+        android:id="@+id/btn_back_to_second_activity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Go To Second Activity" />
-
-    <Button
-        android:id="@+id/btn_implicit_intent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Open Implicit Intent" />
+        android:background="@android:color/transparent"
+        android:text="Back To Second Activity"
+        android:textColor="#E91E63"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 </LinearLayout>

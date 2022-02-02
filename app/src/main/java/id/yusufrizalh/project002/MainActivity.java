@@ -1,13 +1,20 @@
 package id.yusufrizalh.project002;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     Toast myToast = null;  // diberi nilai awal
+    // langkah 1: membuat global variable
+    private Button btn_to_second_activity, btn_implicit_intent;
 
     // Lifecycle Activity
     @Override
@@ -18,6 +25,31 @@ public class MainActivity extends AppCompatActivity {
                 Toast.LENGTH_SHORT);
         myToast.setGravity(Gravity.CENTER, 0, 0);
         myToast.show();
+
+        // langkah 2: mengenalkan variable dengan id pada layout
+        btn_to_second_activity = findViewById(R.id.btn_to_second_activity);
+        btn_implicit_intent = findViewById(R.id.btn_implicit_intent);
+
+        // langkah 3: event handling btn_to_second_activity
+        btn_to_second_activity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // perintah untuk berpindah Activity
+                // explicit intent
+                Intent myIntent = new Intent(MainActivity.this, SecondActivity.class);
+                startActivity(myIntent);
+            }
+        });
+
+        btn_implicit_intent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // perintah untuk open implicit intent
+                Intent myImplicitIntent = new Intent(Intent.ACTION_VIEW);
+                myImplicitIntent.setData(Uri.parse("http://inixindo.id"));
+                startActivity(myImplicitIntent);
+            }
+        });
     }
 
     @Override
